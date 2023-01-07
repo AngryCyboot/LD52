@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scènes/UI.gd" type="Script" id=1]
-[ext_resource path="res://Images/icon.png" type="Texture" id=2]
+[ext_resource path="res://Images/Elec.png" type="Texture" id=2]
+[ext_resource path="res://Images/O2.png" type="Texture" id=3]
+[ext_resource path="res://Images/Shit.png" type="Texture" id=4]
+[ext_resource path="res://Images/Water.png" type="Texture" id=5]
+[ext_resource path="res://Images/Food.png" type="Texture" id=6]
+[ext_resource path="res://Images/Turn.png" type="Texture" id=7]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -28,28 +33,23 @@ polygon = PoolVector2Array( 0, 35, 1024, 35, 1024, 0, 0, 0 )
 
 [node name="ElectricityIcon" type="Sprite" parent="."]
 position = Vector2( 19, 17 )
-scale = Vector2( 0.375, 0.375 )
 texture = ExtResource( 2 )
 
 [node name="OxygenIcon" type="Sprite" parent="."]
 position = Vector2( 121, 17 )
-scale = Vector2( 0.375, 0.375 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="FertilizerIcon" type="Sprite" parent="."]
 position = Vector2( 225, 18 )
-scale = Vector2( 0.375, 0.375 )
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 
 [node name="WaterIcon" type="Sprite" parent="."]
 position = Vector2( 324, 18 )
-scale = Vector2( 0.375, 0.375 )
-texture = ExtResource( 2 )
+texture = ExtResource( 5 )
 
 [node name="FoodIcon" type="Sprite" parent="."]
 position = Vector2( 421, 18 )
-scale = Vector2( 0.375, 0.375 )
-texture = ExtResource( 2 )
+texture = ExtResource( 6 )
 
 [node name="ElectricityLabel" type="RichTextLabel" parent="."]
 margin_left = 34.0
@@ -109,4 +109,5 @@ __meta__ = {
 
 [node name="EndTurnIcon" type="Sprite" parent="."]
 position = Vector2( 926, 546 )
-texture = ExtResource( 2 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
