@@ -5,7 +5,7 @@ export (Material) var idleMaterial = preload("res://materials et shaders/Batimen
  
 func _input(event):
 	if event is InputEventKey and event.pressed:
-		if event.scancode == KEY_SPACE:
+		if event.scancode == KEY_D:
 			set_damage()
 		if event.scancode == KEY_A:
 			set_actif()
