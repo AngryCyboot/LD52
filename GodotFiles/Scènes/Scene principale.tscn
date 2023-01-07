@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scènes/VueGenerique.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scènes/Base.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scènes/Survivant.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/Scene principale.gd" type="Script" id=3]
+[ext_resource path="res://Scènes/Champ.tscn" type="PackedScene" id=4]
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 3 )
@@ -13,8 +14,10 @@ fov = 63.7015
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 
-[node name="Vue" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0359811 )
-
 [node name="Survivant" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16723, 0, 0 )
+
+[node name="Base" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="Champ" parent="." instance=ExtResource( 4 )]

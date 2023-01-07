@@ -1,4 +1,4 @@
-extends Mesh
+extends Spatial
 
 var Botanist = int()
 var Engineering = int()
