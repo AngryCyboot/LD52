@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scènes/VueGenerique.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scènes/Survivant.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/Scene principale.gd" type="Script" id=3]
 
 [node name="Spatial" type="Spatial"]
+script = ExtResource( 3 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.924093, -0.172698, 0.340921, -0.0191218, 0.870062, 0.492571, -0.381689, -0.4617, 0.800716, 1.70959, 4.42453, 4.20187 )
