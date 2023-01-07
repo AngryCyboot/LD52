@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://models/OxyRecycler.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://materials et shaders/LowPolyMat.tres" type="Material" id=2]
+[ext_resource path="res://Scènes/Batiment.tscn" type="PackedScene" id=3]
+
+[node name="OxyRecycler" instance=ExtResource( 3 )]
+mesh = ExtResource( 1 )
+activeMaterial = ExtResource( 2 )
