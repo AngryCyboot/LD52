@@ -45,8 +45,8 @@ func _physics_process(delta):
 func _process(delta) :
 	if result:
 		var truc = result.collider.get_parent()
-		truc = truc.get_parent() #Sshhh !
-		if truc.name == "Survivant":
+		if truc.name == "Survivant_mesh":
+			truc = truc.get_parent() #Sshhh !
 			truc.up()
 			if mousePressed:
 				Survivant = truc

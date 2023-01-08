@@ -22,6 +22,7 @@ mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="RigidBody" type="RigidBody" parent="Survivant_mesh"]
+sleeping = true
 
 [node name="CollisionShape" type="CollisionShape" parent="Survivant_mesh/RigidBody"]
 shape = SubResource( 2 )

@@ -22,18 +22,20 @@ func _ready():
 		
 func placing(var pos):
 	self.transform.origin=pos
+	isUpTime = time
+	isUp = true
 	
 func up():
-	if (time - isUpTime) > 500 and not isUp :
-		$Survivant_mesh.transform.origin += Vector3(0,0.5,0)
-		isUpTime = time
+	time = Time.get_ticks_msec()
+	if (time - isUpTime) > 100 and not isUp :
+		$Survivant_mesh.transform.origin.y = 1
+		isUpTime = Time.get_ticks_msec()
 		isUp = true
 	pass
 
 func _process(delta: float) -> void:
 	time = Time.get_ticks_msec()
-	if (time - isUpTime) > 499 and isUp :
-		$Survivant_mesh.transform.origin += Vector3(0,-0.5,0)
-		isUpTime = 0
+	if (time - isUpTime) > 300 and isUp :
+		$Survivant_mesh.transform.origin.y = 0.5
 		isUp = false
 	pass
