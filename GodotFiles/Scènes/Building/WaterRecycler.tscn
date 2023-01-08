@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scènes/Batiment.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scènes/Building/Placement.tscn" type="PackedScene" id=2]
+[ext_resource path="res://materials et shaders/LowPolyMat.tres" type="Material" id=3]
+[ext_resource path="res://models/WaterRecycler.obj" type="ArrayMesh" id=4]
+
+[node name="WaterRecycler" instance=ExtResource( 1 )]
+mesh = ExtResource( 4 )
+activeMaterial = ExtResource( 3 )
+
+[node name="Placement" parent="." index="0" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.85835, 0, 0 )
