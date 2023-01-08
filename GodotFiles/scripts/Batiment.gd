@@ -24,7 +24,6 @@ func set_actif(): # Asign active (green color) to building
 func set_inactif(): # Asign idle (yellow color) to building
 	
 	self.get_mesh().surface_set_material(0,idleMaterial)
-	print("change")
 	status = "idle"
 	
 func status():
@@ -33,7 +32,6 @@ func status():
 
 
 func _ready():
-	print("loaded")
 	set_inactif()
 
 #func _process(delta):
