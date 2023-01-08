@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://materials et shaders/Survivant.tres" type="Material" id=1]
 [ext_resource path="res://scripts/Survivant.gd" type="Script" id=2]
@@ -9,6 +9,10 @@ mid_height = 0.5
 radial_segments = 8
 rings = 3
 
+[sub_resource type="CapsuleShape" id=2]
+radius = 0.3
+height = 0.75
+
 [node name="Survivant" type="Spatial"]
 script = ExtResource( 2 )
 
@@ -16,3 +20,8 @@ script = ExtResource( 2 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
+
+[node name="RigidBody" type="RigidBody" parent="Survivant_mesh"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Survivant_mesh/RigidBody"]
+shape = SubResource( 2 )

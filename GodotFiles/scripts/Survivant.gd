@@ -1,9 +1,8 @@
 extends Spatial
 
-var camera
-var isSelected = false
-var from
-var to
+var isUpTime = 0
+var time = 0
+var isUp = false
 
 var Botanist = int()
 var Engineering = int()
@@ -19,21 +18,22 @@ var Class_list = [
 				]
 
 func _ready():
-	camera = $"../Camera"
 	pass # Replace with function body.
+		
+func placing(var pos):
+	self.transform.origin=pos
+	
+func up():
+	if (time - isUpTime) > 500 and not isUp :
+		$Survivant_mesh.transform.origin += Vector3(0,0.5,0)
+		isUpTime = time
+		isUp = true
+	pass
 
-func _input(event):
-	if event is InputEventMouseButton and event.is_pressed():
-		isSelected = true
-
-func _physics_process(delta):
-	if isSelected == true :
-		var mouse_pos = get_viewport().get_mouse_position()
-		from = camera.project_ray_origin(mouse_pos)
-		to = from + camera.project_ray_normal(mouse_pos) * 10000
-		var space_state = get_world().get_direct_space_state()
-		var result = space_state.intersect_ray( from, to)
-		if result:
-			self.transform.origin = result.position
-		isSelected = false
+func _process(delta: float) -> void:
+	time = Time.get_ticks_msec()
+	if (time - isUpTime) > 499 and isUp :
+		$Survivant_mesh.transform.origin += Vector3(0,-0.5,0)
+		isUpTime = 0
+		isUp = false
 	pass

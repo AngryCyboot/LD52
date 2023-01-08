@@ -1,6 +1,13 @@
 extends Spatial
 
-
+var camera
+var from
+var to
+var result
+var mouse_pos
+var space_state
+var Survivant
+var mousePressed
 # Declare member variables here. Examples:
 # var a: int = 2
 # var b: String = "text"
@@ -8,6 +15,7 @@ extends Spatial
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	camera = $Camera
 	pass # Replace with function body.
 
 func _input(event):
@@ -19,7 +27,31 @@ func _input(event):
 			else:
 				$Champ.visible = true
 				$Base.visible = false
+	if event is InputEventMouseButton :
+		mousePressed = event.is_pressed()
+	pass
+	
+func _physics_process(delta):
+	var exclude = Array()
+	if Survivant:
+		exclude = Survivant.get_children()
+	mouse_pos = get_viewport().get_mouse_position()
+	from = camera.project_ray_origin(mouse_pos)
+	to = from + camera.project_ray_normal(mouse_pos) * 10000
+	space_state = get_world().get_direct_space_state()
+	result = space_state.intersect_ray( from, to, exclude)
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass
+func _process(delta) :
+	if result:
+		var truc = result.collider.get_parent()
+		truc = truc.get_parent() #Sshhh !
+		if truc.name == "Survivant":
+			truc.up()
+			if mousePressed:
+				Survivant = truc
+			else:
+				Survivant = null
+	if Survivant:
+		Survivant.placing(result.position)
+	pass
