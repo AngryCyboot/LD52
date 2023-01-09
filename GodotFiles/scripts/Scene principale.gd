@@ -7,7 +7,7 @@ var UI
 
 # [0stock,1max,2prod,3conso,4frozen*] conso is only for UI
 
-var food = [10,0,0,0]
+var food = [75,0,0,0]
 var energy = [10,0,0,0]
 var oxy = [10,0,0,0]
 var water = [10,0,0,0,0]
