@@ -1,19 +1,16 @@
 extends CanvasLayer
 
 var phase
-# Declare member variables here. Examples:
-var electricityAmount = 0
-var oxygenAmount = 0
-var fertilizerAmount = 0
-var waterAmount = 0
-var foodAmount = 0
-var electricityMax = 240
-var oxygenMax = 240
-var fertilizerMax = 240
-var waterMax = 240
-var foodMax = 10
+
 var turn = 0
-var goal = 50
+var end = 0
+var survivors = 0
+
+var food = [0,0,0,0]
+var energy = [0,0,0,0]
+var oxy = [0,0,0,0]
+var water = [0,0,0,0]
+var shit = [0,0,0,0]
 
 # Called when the node enters the scene tree for the first time.
 #func _ready():
@@ -22,51 +19,34 @@ var goal = 50
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$ElectricityLabel.text = String(electricityAmount)+"/"+String(electricityMax)
-	$OxygenLabel.text = String(oxygenAmount)+"/"+String(oxygenMax)
-	$FertilizerLabel.text = String(fertilizerAmount)+"/"+String(fertilizerMax)
-	$WaterLabel.text = String(waterAmount)+"/"+String(waterMax)
-	$FoodLabel.text = String(foodAmount)+"/"+String(foodMax)
-	$GoalLabel.text = String(turn)+"/"+String(goal)+" sol"
+	$ElectricityLabel.text = String(energy[0])+"/"+String(energy[1])
+	$ElectricityLabel.hint_tooltip = "+" + String(energy[2]) + "-" + String(energy[3])
+	$OxygenLabel.text = String(oxy[0])+"/"+String(oxy[1])
+	$OxygenLabel.hint_tooltip = "+" + String(oxy[2]) + "-" + String(oxy[3])
+	$FertilizerLabel.text = String(shit[0])+"/"+String(shit[1]) + "+" + String(shit[4])
+	$FertilizerLabel.hint_tooltip = "+" + String(shit[2]) + "-" + String(shit[3])
+	$WaterLabel.text = String(water[0])+"/"+String(water[1]) + "+" + String(water[4])
+	$WaterLabel.hint_tooltip = "+" + String(water[2]) + "-" + String(water[3])
+	$FoodLabel.text = String(food[0])+"/"+String(food[1])
+	$FoodLabel.hint_tooltip = "+" + String(food[2]) + "-" + String(food[3])
+	$GoalLabel.text = String(turn)+"/"+String(end)+" sol"
 	pass
 	
-func addElec(quantite):
-	if electricityAmount < electricityMax:
-		electricityAmount = electricityAmount + quantite
-	
-func addOxygen(quantite):
-	if oxygenAmount < oxygenMax:
-		oxygenAmount = oxygenAmount + quantite
-	
-func addFertilizer(quantite):
-	if fertilizerAmount < fertilizerMax:
-		fertilizerAmount = fertilizerAmount + quantite
-	
-func addWater(quantite):
-	if waterAmount < waterMax:
-		waterAmount = waterAmount + quantite
-	
-func addFood(quantite):
-	if foodAmount < foodMax:
-		foodAmount = foodAmount + quantite
-	
-func _input(event):
-	if event is InputEventKey and event.pressed:
-		if event.scancode == KEY_KP_1:
-			addElec(1)
-		if event.scancode == KEY_KP_2:
-			addOxygen(1)
-		if event.scancode == KEY_KP_3:
-			addFertilizer(1)
-		if event.scancode == KEY_KP_4:
-			addWater(1)
-		if event.scancode == KEY_KP_5:
-			addFood(1)
+func update(allTheThings):
+	energy = allTheThings[0]
+	oxy = allTheThings[1]
+	shit = allTheThings[2]
+	water = allTheThings[3]
+	food = allTheThings[4]
+	turn = allTheThings[5]
+	survivors = allTheThings[6]
 
 func passTurn():
-	turn += 1
 	$Button.pressed = false
 	$Button.disabled = false
+	
+func initialise(doom):
+	end = doom
 
 func phase():
 	return phase
