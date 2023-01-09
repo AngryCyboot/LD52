@@ -28,7 +28,8 @@ func dead():
 
 func placing(var pos):
 	if alive:
-		self.transform.origin=pos
+		self.transform.origin.x = pos.x
+		self.transform.origin.z = pos.z
 		isUpTime = time
 		isUp = true
 	
