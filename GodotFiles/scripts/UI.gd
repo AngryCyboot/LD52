@@ -20,15 +20,15 @@ var shit = [0,0,0,0]
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$ElectricityLabel.text = String(energy[0])+"/"+String(energy[1])
-	$ElectricityLabel.hint_tooltip = "+" + String(energy[2]) + "-" + String(energy[3])
+	$ElectricityLabel.hint_tooltip = "+" + String(energy[2]) + " -" + String(energy[3])
 	$OxygenLabel.text = String(oxy[0])+"/"+String(oxy[1])
-	$OxygenLabel.hint_tooltip = "+" + String(oxy[2]) + "-" + String(oxy[3])
-	$FertilizerLabel.text = String(shit[0])+"/"+String(shit[1]) + "+" + String(shit[4])
-	$FertilizerLabel.hint_tooltip = "+" + String(shit[2]) + "-" + String(shit[3])
-	$WaterLabel.text = String(water[0])+"/"+String(water[1]) + "+" + String(water[4])
-	$WaterLabel.hint_tooltip = "+" + String(water[2]) + "-" + String(water[3])
+	$OxygenLabel.hint_tooltip = "+" + String(oxy[2]) + " -" + String(oxy[3])
+	$FertilizerLabel.text = String(shit[0])+"/"+String(shit[1]) + " +" + String(shit[4])
+	$FertilizerLabel.hint_tooltip = "+" + String(shit[2]) + " -" + String(shit[3])
+	$WaterLabel.text = String(water[0])+"/"+String(water[1]) + " +" + String(water[4])
+	$WaterLabel.hint_tooltip = "+" + String(water[2]) + " -" + String(water[3])
 	$FoodLabel.text = String(food[0])+"/"+String(food[1])
-	$FoodLabel.hint_tooltip = "+" + String(food[2]) + "-" + String(food[3])
+	$FoodLabel.hint_tooltip = "+" + String(food[2]) + " -" + String(food[3])
 	$GoalLabel.text = String(turn)+"/"+String(end)+" sol"
 	pass
 	
