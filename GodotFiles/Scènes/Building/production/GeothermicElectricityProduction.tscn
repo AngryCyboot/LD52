@@ -5,3 +5,6 @@
 
 [node name="GeothermicElectricityProduction" instance=ExtResource( 1 )]
 mesh = ExtResource( 2 )
+
+[connection signal="body_entered" from="Area" to="." method="body_entered"]
+[connection signal="body_exited" from="Area" to="." method="body_exited"]
