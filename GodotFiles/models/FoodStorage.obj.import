@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/FoodStorage.obj-745190cdb176df693629995a59b9ecdd.mesh"
+
+[deps]
+
+files=[ "res://.import/FoodStorage.obj-745190cdb176df693629995a59b9ecdd.mesh" ]
+
+source_file="res://models/FoodStorage.obj"
+dest_files=[ "res://.import/FoodStorage.obj-745190cdb176df693629995a59b9ecdd.mesh", "res://.import/FoodStorage.obj-745190cdb176df693629995a59b9ecdd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

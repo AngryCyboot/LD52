@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Farms&Habs.obj-d15692c0725e211bf507409ac2f8aff4.mesh"
+
+[deps]
+
+files=[ "res://.import/Farms&Habs.obj-d15692c0725e211bf507409ac2f8aff4.mesh" ]
+
+source_file="res://models/Farms&Habs.obj"
+dest_files=[ "res://.import/Farms&Habs.obj-d15692c0725e211bf507409ac2f8aff4.mesh", "res://.import/Farms&Habs.obj-d15692c0725e211bf507409ac2f8aff4.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

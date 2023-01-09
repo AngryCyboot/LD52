@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scènes/Batiment.tscn" type="PackedScene" id=1]
+[ext_resource path="res://models/GeothermicElectrictyProduction.obj" type="ArrayMesh" id=2]
+
+[node name="GeothermicElectricityProduction" instance=ExtResource( 1 )]
+mesh = ExtResource( 2 )
