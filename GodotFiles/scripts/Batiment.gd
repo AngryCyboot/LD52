@@ -4,8 +4,16 @@ export (Material) var damageMaterial = preload("res://materials et shaders/Batim
 export (Material) var activeMaterial = preload("res://materials et shaders/Batiment/Active.tres")
 #export (Material) var idleMaterial = preload("res://materials et shaders/Batiment/Idle.tres")
 
+export (int) var Food = 0
+export (int) var Oxy = 0
+export (int) var Energy = 0
+export (int) var Water = 0
+export (int) var Shit = 0
+
+var prod = Array()
+
 var active = false
-var damage = false
+export var damage = false
 var survivors = 0
 
 func _input(event):
@@ -50,6 +58,7 @@ func set_inactif(): # Asign idle (yellow color) to building
 	
 func _ready():
 	set_inactif()
+	prod = [Energy,Oxy,Shit,Water,Food,active,damage]
 	self.get_mesh().surface_set_material(0,activeMaterial)
 
 func _process(delta):
