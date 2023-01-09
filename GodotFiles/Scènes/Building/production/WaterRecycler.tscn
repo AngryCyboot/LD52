@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scènes/Batiment.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scènes/Building/Batiment.tscn" type="PackedScene" id=1]
 [ext_resource path="res://materials et shaders/LowPolyMat.tres" type="Material" id=3]
 [ext_resource path="res://models/WaterRecycler.obj" type="ArrayMesh" id=4]
 
