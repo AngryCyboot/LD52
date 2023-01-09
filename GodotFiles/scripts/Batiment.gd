@@ -21,7 +21,7 @@ export var damage = false
 export var needSurvivorDefault = true
 var survivors = 0
 var needSurvivor = true
-var stage = 0
+export var stage = 0
 
 #func _input(event):
 	#if event is InputEventKey and event.pressed:
