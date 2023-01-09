@@ -112,7 +112,18 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="EndTurnIcon" type="Sprite" parent="."]
-position = Vector2( 926, 546 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 7 )
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.819
+anchor_top = 0.599
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 52.3439
+margin_top = 148.6
+margin_right = -56.0
+margin_bottom = -17.0
+toggle_mode = true
+icon = ExtResource( 7 )
+icon_align = 1
+expand_icon = true
+
+[connection signal="toggled" from="Button" to="." method="_on_Button_toggled"]

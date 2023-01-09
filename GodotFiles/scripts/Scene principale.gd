@@ -1,57 +1,24 @@
 extends Spatial
 
-var camera
-var from
-var to
-var result
-var mouse_pos
-var space_state
-var Survivant
-var mousePressed
-# Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = "text"
+var turn = 0 #change me plz
+var survivors = 15 #change me plz
+var UI 
 
+# [stock,max,prod,conso]
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	camera = $Camera
-	pass # Replace with function body.
+var food = [0,0,0,0]
+var energy = [0,0,0,0]
+var oxy = [0,0,0,0]
+var water = [0,0,0,0]
+var shit = [0,0,0,0]
 
-func _input(event):
-	if event is InputEventKey and event.pressed:
-		if event.scancode == KEY_TAB:
-			if $Champ.visible:
-				$Champ.visible = false
-				$Base.visible = true
-			else:
-				$Champ.visible = true
-				$Base.visible = false
-	if event is InputEventMouseButton :
-		mousePressed = event.is_pressed()
+func _ready():
+	UI = $Camera/UI
 	pass
 	
-func _physics_process(delta):
-	var exclude = Array()
-	if Survivant:
-		exclude = Survivant.get_children()
-	mouse_pos = get_viewport().get_mouse_position()
-	from = camera.project_ray_origin(mouse_pos)
-	to = from + camera.project_ray_normal(mouse_pos) * 10000
-	space_state = get_world().get_direct_space_state()
-	result = space_state.intersect_ray( from, to, exclude)
-	pass
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta) :
-	if result:
-		var truc = result.collider.get_parent()
-		if truc.name == "Survivant_mesh":
-			truc = truc.get_parent() #Sshhh !
-			truc.up()
-			if mousePressed:
-				Survivant = truc
-			else:
-				Survivant = null
-	if Survivant:
-		Survivant.placing(result.position)
+func _process(delta):
+	if UI.phase():
+		UI.passTurn()
+		turn += 1
+	
 	pass

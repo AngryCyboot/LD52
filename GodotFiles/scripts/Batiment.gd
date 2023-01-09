@@ -2,7 +2,7 @@ extends MeshInstance
 
 export (Material) var damageMaterial = preload("res://materials et shaders/Batiment/Damage.tres")
 export (Material) var activeMaterial = preload("res://materials et shaders/Batiment/Active.tres")
-export (Material) var idleMaterial = preload("res://materials et shaders/Batiment/Idle.tres")
+#export (Material) var idleMaterial = preload("res://materials et shaders/Batiment/Idle.tres")
 
 var active = false
 var damage = false
@@ -23,21 +23,24 @@ func body_entered(plop):
 
 func body_exited(plop):
 	survivors -= 1
-	print(survivors)
 	pass
 	
 func set_damage(): # Asign damage (red color) to building
-	self.get_mesh().surface_set_material(0,damageMaterial)
+	if damage:
+		self.get_mesh().surface_set_material(0,damageMaterial)
+	else:
+		self.get_mesh().surface_set_material(0,activeMaterial)
+	
 	#status = "damage"
 
 func set_actif(): # Asign active (green color) to building
-	self.get_mesh().surface_set_material(0,activeMaterial)
+	#self.get_mesh().surface_set_material(0,activeMaterial)
 	active = true
 	$SpotLight.visible = active
 	#status = "active"
 
 func set_inactif(): # Asign idle (yellow color) to building
-	self.get_mesh().surface_set_material(0,idleMaterial)
+	#self.get_mesh().surface_set_material(0,idleMaterial)
 	active = false
 	$SpotLight.visible = active
 	#status = "idle"
@@ -47,6 +50,7 @@ func set_inactif(): # Asign idle (yellow color) to building
 	
 func _ready():
 	set_inactif()
+	self.get_mesh().surface_set_material(0,activeMaterial)
 
 func _process(delta):
 	if survivors > 0 :

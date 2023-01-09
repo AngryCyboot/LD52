@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-
+var phase
 # Declare member variables here. Examples:
 var electricityAmount = 0
 var oxygenAmount = 0
@@ -12,7 +12,8 @@ var oxygenMax = 240
 var fertilizerMax = 240
 var waterMax = 240
 var foodMax = 10
-var goal = 1200
+var turn = 0
+var goal = 50
 
 # Called when the node enters the scene tree for the first time.
 #func _ready():
@@ -26,7 +27,7 @@ func _process(delta):
 	$FertilizerLabel.text = String(fertilizerAmount)+"/"+String(fertilizerMax)
 	$WaterLabel.text = String(waterAmount)+"/"+String(waterMax)
 	$FoodLabel.text = String(foodAmount)+"/"+String(foodMax)
-	$GoalLabel.text = String(goal)+" sol"
+	$GoalLabel.text = String(turn)+"/"+String(goal)+" sol"
 	pass
 	
 func addElec(quantite):
@@ -61,4 +62,16 @@ func _input(event):
 			addWater(1)
 		if event.scancode == KEY_KP_5:
 			addFood(1)
-	
+
+func passTurn():
+	turn += 1
+	$Button.pressed = false
+	$Button.disabled = false
+
+func phase():
+	return phase
+
+func _on_Button_toggled(button_pressed):
+	phase = button_pressed
+	$Button.disabled = true
+	pass # Replace with function body.
