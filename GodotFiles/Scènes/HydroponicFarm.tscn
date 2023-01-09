@@ -6,5 +6,7 @@
 
 [node name="HydroponicFarm" instance=ExtResource( 1 )]
 mesh = ExtResource( 2 )
+plant = true
+needSurvivorDefault = true
 
 [node name="Plant" parent="." index="0" instance=ExtResource( 3 )]
