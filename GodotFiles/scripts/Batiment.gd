@@ -13,10 +13,12 @@ export (int) var Shit = 0
 var prod = Array()
 
 var active = false
+export var plant = false
 export var damage = false
 export var needSurvivorDefault = true
 var survivors = 0
 var needSurvivor
+var stage
 
 #func _input(event):
 	#if event is InputEventKey and event.pressed:
@@ -55,14 +57,16 @@ func set_inactif(): # Asign idle (yellow color) to building
 	$SpotLight.visible = active
 	#status = "idle"
 	
-#func status():
-	#return status
+func status():
+	prod = [Energy,Oxy,Shit,Water,Food,active,damage,stage,needSurvivor]
+	return prod
 	
 func _ready():
 	set_inactif()
 	set_damage()
 	needSurvivor = needSurvivorDefault
-	prod = [Energy,Oxy,Shit,Water,Food,active,damage]
+	
+
 
 func _process(delta):
 	if damage:
