@@ -17,7 +17,7 @@
 size = Vector2( 500, 500 )
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 50, 50, 0.1 )
+extents = Vector3( 500, 500, 0.01 )
 
 [node name="Base" instance=ExtResource( 1 )]
 

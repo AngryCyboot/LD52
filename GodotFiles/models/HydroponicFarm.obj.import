@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/HydroponicFarm.obj-aa273a9f3c23b51c64addb9a287d6adc.mesh"
+
+[deps]
+
+files=[ "res://.import/HydroponicFarm.obj-aa273a9f3c23b51c64addb9a287d6adc.mesh" ]
+
+source_file="res://models/HydroponicFarm.obj"
+dest_files=[ "res://.import/HydroponicFarm.obj-aa273a9f3c23b51c64addb9a287d6adc.mesh", "res://.import/HydroponicFarm.obj-aa273a9f3c23b51c64addb9a287d6adc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

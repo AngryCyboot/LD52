@@ -9,5 +9,10 @@
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0 )
 mesh = ExtResource( 2 )
 
+[node name="SpotLight" parent="." index="1"]
+transform = Transform( -1.55067e-09, 0.926968, -0.37514, 4.36839e-08, 0.37514, 0.926968, 1, -1.49502e-08, -4.10753e-08, -2.96962, 6.15104, 0.0721474 )
+spot_range = 8.30943
+spot_angle = 16.6521
+
 [node name="Area" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 0 )

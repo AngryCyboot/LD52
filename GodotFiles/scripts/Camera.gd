@@ -16,12 +16,12 @@ var mousePressed
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.scancode == KEY_TAB:
-			if $Champ.visible:
-				$Champ.visible = false
-				$Base.visible = true
+			if $"../Champ".visible:
+				$"../Champ".visible = false
+				$"../Base".visible = true
 			else:
-				$Champ.visible = true
-				$Base.visible = false
+				$"../Champ".visible = true
+				$"../Base".visible = false
 	if event is InputEventMouseButton :
 		mousePressed = event.is_pressed()
 	pass
