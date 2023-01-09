@@ -25,6 +25,8 @@ mesh = SubResource( 1 )
 material/0 = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="Terre" index="0"]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="Terre/StaticBody" index="0"]
 shape = SubResource( 2 )
