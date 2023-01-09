@@ -27,14 +27,15 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="RessourceBar" type="Polygon2D" parent="."]
 color = Color( 0.254902, 0.239216, 0.239216, 1 )
 polygon = PoolVector2Array( 0, 48, 1024, 48, 1024, 0, 0, 0 )
 
 [node name="ElectricityIcon" type="Sprite" parent="."]
-position = Vector2( 28, 24 )
+position = Vector2( 196, 281 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
+offset = Vector2( -112, -171.333 )
 
 [node name="OxygenIcon" type="Sprite" parent="."]
 position = Vector2( 145, 24 )
@@ -58,9 +59,9 @@ texture = ExtResource( 6 )
 
 [node name="ElectricityLabel" type="RichTextLabel" parent="."]
 margin_left = 49.0
-margin_top = 15.0
+margin_top = 17.0
 margin_right = 112.0
-margin_bottom = 34.0
+margin_bottom = 36.0
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": true
@@ -68,9 +69,9 @@ __meta__ = {
 
 [node name="OxygenLabel" type="RichTextLabel" parent="."]
 margin_left = 174.0
-margin_top = 15.0
+margin_top = 17.0
 margin_right = 237.0
-margin_bottom = 34.0
+margin_bottom = 36.0
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": true
@@ -78,9 +79,9 @@ __meta__ = {
 
 [node name="FertilizerLabel" type="RichTextLabel" parent="."]
 margin_left = 291.0
-margin_top = 15.0
+margin_top = 17.0
 margin_right = 354.0
-margin_bottom = 34.0
+margin_bottom = 36.0
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": true
@@ -88,9 +89,9 @@ __meta__ = {
 
 [node name="WaterLabel" type="RichTextLabel" parent="."]
 margin_left = 407.0
-margin_top = 15.0
+margin_top = 17.0
 margin_right = 470.0
-margin_bottom = 34.0
+margin_bottom = 36.0
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": true
@@ -98,20 +99,34 @@ __meta__ = {
 
 [node name="FoodLabel" type="RichTextLabel" parent="."]
 margin_left = 525.0
-margin_top = 15.0
+margin_top = 17.0
 margin_right = 588.0
-margin_bottom = 34.0
+margin_bottom = 36.0
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="GoalLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.0380859
 margin_left = 847.0
-margin_top = 12.0
+margin_top = 17.0
 margin_right = 1016.0
-margin_bottom = 35.0
+margin_bottom = 40.0
 bbcode_enabled = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="SurvivorLabel" type="RichTextLabel" parent="."]
+margin_left = 622.0
+margin_top = 17.0
+margin_right = 791.0
+margin_bottom = 36.0
+bbcode_enabled = true
+text = "Survivors :"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": true,
@@ -131,5 +146,24 @@ toggle_mode = true
 icon = ExtResource( 7 )
 icon_align = 1
 expand_icon = true
+
+[node name="EndingScreen" type="Polygon2D" parent="."]
+visible = false
+color = Color( 0.105882, 0.0705882, 0.0705882, 1 )
+polygon = PoolVector2Array( 0, 0, 1, 597, 1024, 600, 1022, 2 )
+
+[node name="ResultLabel" type="RichTextLabel" parent="EndingScreen"]
+visible = false
+margin_left = 467.0
+margin_top = 248.0
+margin_right = 519.0
+margin_bottom = 265.0
+
+[node name="DetailedResultLabel" type="RichTextLabel" parent="EndingScreen"]
+visible = false
+margin_left = 359.0
+margin_top = 282.0
+margin_right = 627.0
+margin_bottom = 322.0
 
 [connection signal="toggled" from="Button" to="." method="_on_Button_toggled"]

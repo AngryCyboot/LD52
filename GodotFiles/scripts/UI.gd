@@ -30,6 +30,8 @@ func _process(delta):
 	$FoodLabel.text = String(food[0])+"/"+String(food[1])
 	$FoodLabel.hint_tooltip = "+" + String(food[2]) + " -" + String(food[3])
 	$GoalLabel.text = String(turn)+"/"+String(end)+" sol"
+	$SurvivorLabel.text = "Survivors : "+String(survivors)
+	ending_Result()
 	pass
 	
 func update(allTheThings):
@@ -55,3 +57,17 @@ func _on_Button_toggled(button_pressed):
 	phase = button_pressed
 	$Button.disabled = true
 	pass # Replace with function body.
+
+func ending_Result():
+	if survivors <= 0 :
+		$EndingScreen.visible = true
+		$EndingScreen/DetailedResultLabel.visible = true
+		$EndingScreen/ResultLabel.visible = true
+		$EndingScreen/ResultLabel.text = "Defeat"
+		$EndingScreen/DetailedResultLabel.text = "You and all the persons you liked are dead. You survived "+String(turn)+" sol"
+	elif survivors >= 1 && turn >= end :
+		$EndingScreen.visible = true
+		$EndingScreen/DetailedResultLabel.visible = true
+		$EndingScreen/ResultLabel.visible = true
+		$EndingScreen/ResultLabel.text = "Victory"
+		$EndingScreen/DetailedResultLabel.text = "You survive "+String(turn)+" sol and keep alive "+String(survivors)+" survivors"
