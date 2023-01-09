@@ -39,77 +39,109 @@ collision_mask = 2
 [node name="CollisionShape" type="CollisionShape" parent="Terre/StaticBody" index="0"]
 shape = SubResource( 2 )
 
-[node name="OxyRecycler" parent="." index="3" instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -8 )
-
-[node name="WaterRecycler" parent="." index="4" instance=ExtResource( 3 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -20, 0, 13 )
-
-[node name="GeothermicElectricityProduction" parent="." index="5" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 18 )
-
-[node name="SolarElectricityProduction" parent="." index="6" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 8 )
-
-[node name="Farms&Habs" parent="." index="7" instance=ExtResource( 6 )]
+[node name="Farms&Habs" parent="." index="3" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13 )
 
-[node name="Batteries" parent="." index="8" instance=ExtResource( 12 )]
+[node name="Prod" type="Spatial" parent="." index="4"]
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 29.3638, 0, -17.1879 )
+
+[node name="OxyRecycler" parent="Prod" index="0" instance=ExtResource( 4 )]
+transform = Transform( 1, 3.59989e-21, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -9.1879, 29.3638, 1.28353e-06 )
+skeleton = NodePath("../..")
+damageMaterial = null
+Oxy = 20
+Energy = -10
+Water = -20
+
+[node name="WaterRecycler" parent="Prod" index="1" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 3.59989e-21, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, 1.91069e-15, -30.1879, 49.3638, 2.15776e-06 )
+skeleton = NodePath("../..")
+damageMaterial = null
+Energy = -20
+Water = 20
+Shit = 10
+
+[node name="GeothermicElectricityProduction" parent="Prod" index="2" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 3.59989e-21, -1, -1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1.91069e-15, -35.1879, 7.3638, 3.21882e-07 )
+skeleton = NodePath("../..")
+damageMaterial = null
+Energy = 20
+Water = -10
+
+[node name="SolarElectricityProduction" parent="Prod" index="3" instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 3.59989e-21, -1, -1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1.91069e-15, -25.1879, 7.3638, 3.21882e-07 )
+skeleton = NodePath("../..")
+Energy = 10
+damage = true
+
+[node name="Storage" type="Spatial" parent="." index="5"]
+
+[node name="Batteries" parent="Storage" index="0" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 13 )
-skeleton = NodePath("../OxyRecycler")
+skeleton = NodePath("../../Prod/OxyRecycler")
 
-[node name="Batteries2" parent="." index="9" instance=ExtResource( 12 )]
+[node name="Batteries2" parent="Storage" index="1" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 13 )
-skeleton = NodePath("../OxyRecycler")
+skeleton = NodePath("../../Prod/OxyRecycler")
+damage = true
 
-[node name="Batteries3" parent="." index="10" instance=ExtResource( 12 )]
+[node name="Batteries3" parent="Storage" index="2" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 13 )
-skeleton = NodePath("../OxyRecycler")
+skeleton = NodePath("../../Prod/OxyRecycler")
+damage = true
 
-[node name="FoodStorage" parent="." index="11" instance=ExtResource( 8 )]
+[node name="FoodStorage" parent="Storage" index="3" instance=ExtResource( 8 )]
 transform = Transform( -2.98023e-08, 0, 1, 0, 1, 0, -1, 0, -2.98023e-08, -6, 0, 23 )
-skeleton = NodePath("../OxyRecycler")
+skeleton = NodePath("../../Prod/OxyRecycler")
 
-[node name="FoodStorage2" parent="." index="12" instance=ExtResource( 8 )]
+[node name="FoodStorage2" parent="Storage" index="4" instance=ExtResource( 8 )]
 transform = Transform( -2.98023e-08, 0, 1, 0, 1, 0, -1, 0, -2.98023e-08, 0, 0, 23 )
-skeleton = NodePath("../OxyRecycler")
+skeleton = NodePath("../../Prod/OxyRecycler")
+damage = true
 
-[node name="FoodStorage3" parent="." index="13" instance=ExtResource( 8 )]
+[node name="FoodStorage3" parent="Storage" index="5" instance=ExtResource( 8 )]
 transform = Transform( -2.98023e-08, 0, 1, 0, 1, 0, -1, 0, -2.98023e-08, 6, 0, 23 )
-skeleton = NodePath("../OxyRecycler")
+skeleton = NodePath("../../Prod/OxyRecycler")
+damage = true
 
-[node name="OxygenStorage" parent="." index="14" instance=ExtResource( 9 )]
+[node name="OxygenStorage" parent="Storage" index="6" instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.95493, 0, -7.46381 )
-skeleton = NodePath("../OxyRecycler")
+skeleton = NodePath("../../Prod/OxyRecycler")
 
-[node name="OxygenStorage2" parent="." index="15" instance=ExtResource( 9 )]
+[node name="OxygenStorage2" parent="Storage" index="7" instance=ExtResource( 9 )]
 transform = Transform( 0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, 0.173648, 8.6642, -3.8147e-06, -5.14228 )
-skeleton = NodePath("../OxyRecycler")
+skeleton = NodePath("../../Prod/OxyRecycler")
+damage = true
 
-[node name="OxygenStorage3" parent="." index="16" instance=ExtResource( 9 )]
+[node name="OxygenStorage3" parent="Storage" index="8" instance=ExtResource( 9 )]
 transform = Transform( 0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, 11.9836, 1.90735e-06, -2.21794 )
-skeleton = NodePath("../OxyRecycler")
+skeleton = NodePath("../../Prod/OxyRecycler")
+damage = true
 
-[node name="ShitStorage" parent="." index="17" instance=ExtResource( 10 )]
+[node name="ShitStorage" parent="Storage" index="9" instance=ExtResource( 10 )]
 transform = Transform( -0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, -0.939693, -15, 0, 1.583 )
-skeleton = NodePath("../OxyRecycler")
+skeleton = NodePath("../../Prod/OxyRecycler")
 
-[node name="ShitStorage2" parent="." index="18" instance=ExtResource( 10 )]
+[node name="ShitStorage2" parent="Storage" index="10" instance=ExtResource( 10 )]
 transform = Transform( -0.984808, 0, 0.173648, 0, 1, 0, -0.173648, 0, -0.984808, -18, 0, 4 )
-skeleton = NodePath("../OxyRecycler")
+skeleton = NodePath("../../Prod/OxyRecycler")
+damage = true
 
-[node name="ShitStorage3" parent="." index="19" instance=ExtResource( 10 )]
+[node name="ShitStorage3" parent="Storage" index="11" instance=ExtResource( 10 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -20.0471, -3.8147e-06, 7.23587 )
-skeleton = NodePath("../OxyRecycler")
+skeleton = NodePath("../../Prod/OxyRecycler")
+damage = true
 
-[node name="WaterStorage" parent="." index="20" instance=ExtResource( 11 )]
+[node name="WaterStorage" parent="Storage" index="12" instance=ExtResource( 11 )]
 transform = Transform( -0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, -0.939693, -15, 0, 23.424 )
-skeleton = NodePath("../OxyRecycler")
+skeleton = NodePath("../../Prod/OxyRecycler")
 
-[node name="WaterStorage2" parent="." index="21" instance=ExtResource( 11 )]
+[node name="WaterStorage2" parent="Storage" index="13" instance=ExtResource( 11 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -20, 0, 18 )
-skeleton = NodePath("../OxyRecycler")
+skeleton = NodePath("../../Prod/OxyRecycler")
+damage = true
 
-[node name="WaterStorage3" parent="." index="22" instance=ExtResource( 11 )]
+[node name="WaterStorage3" parent="Storage" index="14" instance=ExtResource( 11 )]
 transform = Transform( -0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808, -18, 0, 21 )
-skeleton = NodePath("../OxyRecycler")
+skeleton = NodePath("../../Prod/OxyRecycler")
+damage = true
