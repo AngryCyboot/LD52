@@ -12,6 +12,8 @@ var oxy = [0,0,0,0]
 var water = [0,0,0,0]
 var shit = [0,0,0,0]
 
+signal restart 
+
 # Called when the node enters the scene tree for the first time.
 #func _ready():
 #	pass # Replace with function body.
@@ -31,7 +33,7 @@ func _process(delta):
 	$FoodLabel.hint_tooltip = "+" + String(food[2]) + " -" + String(food[3])
 	$GoalLabel.text = String(turn)+"/"+String(end)+" sol"
 	$SurvivorLabel.text = "Survivors : "+String(survivors)
-	ending_Result()
+	
 	pass
 	
 func update(allTheThings):
@@ -46,6 +48,7 @@ func update(allTheThings):
 func passTurn():
 	$Button.pressed = false
 	$Button.disabled = false
+	ending_Result()
 	
 func initialise(doom):
 	end = doom
@@ -65,9 +68,14 @@ func ending_Result():
 		$EndingScreen/ResultLabel.visible = true
 		$EndingScreen/ResultLabel.text = "Defeat"
 		$EndingScreen/DetailedResultLabel.text = "You and all the persons you liked are dead. You survived "+String(turn)+" sol"
+		$EndingScreen/Restart_button.disabled = false
 	elif survivors >= 1 && turn >= end :
 		$EndingScreen.visible = true
 		$EndingScreen/DetailedResultLabel.visible = true
 		$EndingScreen/ResultLabel.visible = true
 		$EndingScreen/ResultLabel.text = "Victory"
 		$EndingScreen/DetailedResultLabel.text = "You survive "+String(turn)+" sol and keep alive "+String(survivors)+" survivors"
+		$EndingScreen/Restart_button.disabled = false
+
+func _on_Button_pressed():
+	emit_signal("restart")
