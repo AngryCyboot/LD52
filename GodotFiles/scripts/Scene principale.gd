@@ -1,17 +1,17 @@
 extends Spatial
 
 var turn = 0 #change me plz
-var end = 50
+export var end = 50
 var survivors = 0 #change me plz
 var UI 
 
 # [0stock,1max,2prod,3conso,4frozen*] conso is only for UI
 
-var food = [75,0,0,0]
-var energy = [10,0,0,0]
-var oxy = [10,0,0,0]
-var water = [10,0,0,0,0]
-var shit = [0,0,0,0,0]
+export var food = [75,0,0,0]
+export var energy = [10,0,0,0]
+export var oxy = [10,0,0,0]
+export var water = [10,0,0,0,0]
+export var shit = [0,0,0,0,0]
 var allTheThings
 var prod
 var fields
@@ -93,9 +93,9 @@ func endTurn():
 	if oxy[0] + oxy[2] < survivors + losses :
 		losses = oxy[0] + oxy[2] - survivors
 	if water[0] + water[2] < survivors + losses :
-		losses = water[0] + water[2] + survivors
+		losses = water[0] + water[2] - survivors
 	if energy[0] + energy[2] < survivors + losses :
-		losses = energy[0] + energy[2] + survivors
+		losses = energy[0] + energy[2] - survivors
 	
 	shit[2] += survivors - losses #hehe ^^
 	kill(losses)
