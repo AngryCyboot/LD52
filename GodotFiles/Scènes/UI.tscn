@@ -92,6 +92,8 @@ __meta__ = {
 }
 
 [node name="FertilizerLabel" type="RichTextLabel" parent="."]
+anchor_left = -0.00390625
+anchor_right = 0.00878906
 margin_left = 291.0
 margin_top = 17.0
 margin_right = 354.0

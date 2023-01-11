@@ -26,7 +26,6 @@ func _ready():
 	fields = $Champ.get_child(0)
 	storage = $Base.get_child(1)
 	for x in prod.get_children():
-		print(x)
 		x.connect("scream",self,"cracotte") 
 	
 	pass
@@ -67,25 +66,26 @@ func endTurn():
 		var data = x.status()
 		if data[5]:
 			x.grow()
+	
+	energy[1] = 60
+	oxy[1] = 60
+	food[1] = 60
+	water[1] = 60
+	shit[1] = 60
 	for x in storage.get_children():
 		var data = x.status()
-		energy[1] = 60
-		oxy[1] = 60
-		food[1] = 60
-		water[1] = 60
-		shit[1] = 60
 		if data[6] and data[5]:
 			x.repair()
 		elif not data[6]:
-			if x.name >= "Batteries":
+			if x.name == "Batteries":
 				energy[1] += 60
-			if x.name >= "FoodStorage":
+			if x.name == "FoodStorage":
 				food[1] += 60
-			if x.name >= "OxygenStorage":
+			if x.name == "OxygenStorage":
 				oxy[1] += 60
-			if x.name >= "ShitStorage":
+			if x.name == "ShitStorage":
 				shit[1] += 60
-			if x.name >= "WaterStorage":
+			if x.name == "WaterStorage":
 				water[1] += 60
 	#survivors
 	if food[0] + food[2] < survivors :
