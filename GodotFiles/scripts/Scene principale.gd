@@ -182,5 +182,7 @@ func _process(delta):
 	UI.update(allTheThings)
 	if UI.phase():
 		endTurn()
+		allTheThings = [energy,oxy,shit,water,food,turn,survivors]
+		UI.update(allTheThings)
 		UI.passTurn()
 	pass
