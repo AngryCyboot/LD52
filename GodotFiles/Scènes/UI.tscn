@@ -104,6 +104,8 @@ __meta__ = {
 }
 
 [node name="WaterLabel" type="RichTextLabel" parent="."]
+anchor_left = -0.00488281
+anchor_right = 0.00488281
 margin_left = 407.0
 margin_top = 17.0
 margin_right = 470.0
