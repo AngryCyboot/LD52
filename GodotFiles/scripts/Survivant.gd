@@ -24,7 +24,7 @@ func _ready():
 func dead():
 	self.visible = false
 	alive = false
-	
+	$Survivant_mesh/RigidBody/CollisionShape.disabled =true
 
 func placing(var pos):
 	if alive:
