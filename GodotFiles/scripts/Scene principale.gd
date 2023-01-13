@@ -9,7 +9,7 @@ var UI
 
 export var food = [75,0,0,0]
 export var energy = [10,0,0,0]
-export var oxy = [10,0,0,0]
+export var oxy = [15,0,0,0]
 export var water = [10,0,0,0,0]
 export var shit = [0,0,0,0,0]
 var allTheThings
