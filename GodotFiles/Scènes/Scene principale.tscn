@@ -11,7 +11,7 @@
 script = ExtResource( 3 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.598408, 0.801191, 0, -0.801191, 0.598408, 0, 21.672, 29.8136 )
+transform = Transform( 1, 0, 0, 0, 0.371724, 0.928343, 0, -0.928343, 0.371724, 0, 25.7063, 29.8136 )
 fov = 81.5625
 script = ExtResource( 6 )
 
@@ -25,49 +25,49 @@ light_energy = 0.56
 [node name="Survivors" type="Spatial" parent="."]
 
 [node name="Survivant" parent="Survivors" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73484, -0.195442, 27.7013 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9171, -0.195442, 12.2602 )
 
 [node name="Survivant2" parent="Survivors" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.384, 0, 25.8604 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1939, 0, 9.49946 )
 
 [node name="Survivant3" parent="Survivors" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5538, 0, 25.8113 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7361, 0, 10.3702 )
 
 [node name="Survivant4" parent="Survivors" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7711, 0, 25.9919 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9534, 0, 10.5508 )
 
 [node name="Survivant5" parent="Survivors" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.92751, 0, 25.8784 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1098, 0, 10.4373 )
 
 [node name="Survivant6" parent="Survivors" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2238, 0, 25.7839 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4061, 0, 10.3428 )
 
 [node name="Survivant7" parent="Survivors" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5538, 0, 27.5138 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7361, 0, 12.0727 )
 
 [node name="Survivant8" parent="Survivors" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9037, 0.0863113, 26.1167 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7136, 0.0863113, 9.75576 )
 
 [node name="Survivant9" parent="Survivors" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2238, 0, 27.4617 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4061, 0, 12.0206 )
 
 [node name="Survivant10" parent="Survivors" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0455, 0, 27.6756 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8554, 0, 11.3147 )
 
 [node name="Survivant11" parent="Survivors" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2333, 0, 25.7703 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0432, 0, 9.40936 )
 
 [node name="Survivant12" parent="Survivors" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1261, 0, 27.1792 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.936, 0, 10.8183 )
 
 [node name="Survivant13" parent="Survivors" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7711, 0, 27.3785 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9534, 0, 11.9374 )
 
 [node name="Survivant14" parent="Survivors" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7208, 0, 25.7176 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5307, 0, 9.35666 )
 
 [node name="Survivant15" parent="Survivors" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.384, 0, 27.4333 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1939, 0, 11.0724 )
 
 [node name="Base" parent="." instance=ExtResource( 1 )]
 
