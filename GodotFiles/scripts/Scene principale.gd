@@ -101,7 +101,7 @@ func endTurn():
 			data = x.status()
 		if not data[6]:
 				energy[1] += 60
-	for x in get_tree().get_nodes_in_group("FoodStorage"):
+	for x in get_tree().get_nodes_in_group("FoodStorages"):
 		var data = x.status()
 		if data[6] and data[5]:
 			x.repair()
