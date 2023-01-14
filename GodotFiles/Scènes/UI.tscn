@@ -154,6 +154,8 @@ __meta__ = {
 
 [node name="EndingScreen" type="Polygon2D" parent="."]
 visible = false
+position = Vector2( 0, 47 )
+scale = Vector2( 1, 0.945 )
 color = Color( 0.105882, 0.0705882, 0.0705882, 1 )
 polygon = PoolVector2Array( 0, 0, 1, 597, 1024, 600, 1022, 2 )
 

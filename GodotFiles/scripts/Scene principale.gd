@@ -7,17 +7,30 @@ var UI
 
 # [0stock,1max,2prod,3conso,4frozen*] conso is only for UI
 
-export var food = [75,0,0,0]
-export var energy = [10,0,0,0]
-export var oxy = [15,0,0,0]
-export var water = [10,0,0,0,0]
-export var shit = [0,0,0,0,0]
+export var start_food = [75,60,0,0,0]
+export var start_energy = [10,60,0,0,0]
+export var start_oxy = [15,60,0,0,0]
+export var start_water = [10,60,0,0,0]
+export var start_shit = [0,60,0,0,0]
+
+var food = [0,0,0,0,0]
+var energy = [0,0,0,0,0]
+var oxy = [0,0,0,0,0]
+var water = [0,0,0,0,0]
+var shit = [0,0,0,0,0]
+
 var allTheThings
 var prod
 var fields
 var storage
 
 func _ready():
+	initialise_list(food,start_food)
+	initialise_list(energy,start_energy)
+	initialise_list(oxy,start_oxy)
+	initialise_list(water,start_water)
+	initialise_list(shit,start_shit)
+	turn = 0
 	UI = $Camera/UI
 	survivors = $Survivors.get_child_count()
 	allTheThings = [energy,oxy,shit,water,food,turn,survivors]
@@ -30,6 +43,10 @@ func _ready():
 		x.connect("scream",self,"cracotte") 
 	
 	pass
+
+func initialise_list (lista,listb) :
+	for x in 4 :
+		lista[x] = listb[x]
 
 func restart ():
 	get_tree().reload_current_scene()
@@ -72,25 +89,45 @@ func endTurn():
 		if data[5]:
 			x.grow()
 	
-	energy[1] = 60
-	oxy[1] = 60
-	food[1] = 60
-	water[1] = 60
-	shit[1] = 60
-	for x in storage.get_children():
+	energy[1] = 0
+	oxy[1] = 0
+	food[1] = 0
+	water[1] = 0
+	shit[1] = 0
+	for x in get_tree().get_nodes_in_group("Batteries"):
 		var data = x.status()
 		if data[6] and data[5]:
 			x.repair()
-		elif not data[6]:
-			if x.name == "Batteries":
+			data = x.status()
+		if not data[6]:
 				energy[1] += 60
-			if x.name == "FoodStorage":
+	for x in get_tree().get_nodes_in_group("FoodStorage"):
+		var data = x.status()
+		if data[6] and data[5]:
+			x.repair()
+			data = x.status()
+		if not data[6]:
 				food[1] += 60
-			if x.name == "OxygenStorage":
+	for x in get_tree().get_nodes_in_group("OxygenStorage"):
+		var data = x.status()
+		if data[6] and data[5]:
+			x.repair()
+			data = x.status()
+		if not data[6]:
 				oxy[1] += 60
-			if x.name == "ShitStorage":
+	for x in get_tree().get_nodes_in_group("ShitStorage"):
+		var data = x.status()
+		if data[6] and data[5]:
+			x.repair()
+			data = x.status()
+		if not data[6]:
 				shit[1] += 60
-			if x.name == "WaterStorage":
+	for x in get_tree().get_nodes_in_group("WaterStorage"):
+		var data = x.status()
+		if data[6] and data[5]:
+			x.repair()
+			data = x.status()
+		if not data[6]:
 				water[1] += 60
 	#survivors
 	if food[0] + food[2] < survivors :
