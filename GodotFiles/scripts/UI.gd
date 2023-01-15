@@ -12,7 +12,7 @@ var oxy = [0,0,0,0]
 var water = [0,0,0,0]
 var shit = [0,0,0,0]
 
-signal restart 
+signal restart_signal
 
 # Called when the node enters the scene tree for the first time.
 #func _ready():
@@ -77,5 +77,5 @@ func ending_Result():
 		$EndingScreen/DetailedResultLabel.text = "You survive "+String(turn)+" sol and keep alive "+String(survivors)+" survivors"
 		$EndingScreen/Restart_button.disabled = false
 
-func _on_Button_pressed():
-	emit_signal("restart")
+func _on_Restart_button_pressed():
+	emit_signal("restart_signal")

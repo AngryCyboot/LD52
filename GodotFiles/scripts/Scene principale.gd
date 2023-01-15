@@ -38,7 +38,7 @@ func _ready():
 	prod = $Base.get_child(0)
 	fields = $Champ.get_child(0)
 	storage = $Base.get_child(1)
-	$Camera/UI.connect("restart",self,"restart")
+	$Camera/UI.connect("restart_signal",self,"restart")
 	for x in prod.get_children():
 		x.connect("scream",self,"cracotte") 
 	

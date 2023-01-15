@@ -154,6 +154,7 @@ __meta__ = {
 }
 
 [node name="EndingScreen" type="Polygon2D" parent="."]
+visible = false
 position = Vector2( 0, 47 )
 scale = Vector2( 1, 0.945 )
 color = Color( 0.105882, 0.0705882, 0.0705882, 1 )
@@ -198,4 +199,4 @@ text = "Retry
 the game ?"
 
 [connection signal="toggled" from="Button" to="." method="_on_Button_toggled"]
-[connection signal="pressed" from="EndingScreen/Restart_button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="EndingScreen/Restart_button" to="." method="_on_Restart_button_pressed"]
