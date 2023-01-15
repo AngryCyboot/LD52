@@ -82,16 +82,16 @@ skeleton = NodePath("../../Prod/OxyRecycler")
 damage = true
 
 [node name="OxygenStorage" parent="Storage" index="6" groups=["OxygenStorage"] instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 23 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7148, 0, 23 )
 skeleton = NodePath("../../Prod/OxyRecycler")
 
 [node name="OxygenStorage2" parent="Storage" index="7" groups=["OxygenStorage"] instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 20 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7148, 0, 20 )
 skeleton = NodePath("../../Prod/OxyRecycler")
 damage = true
 
 [node name="OxygenStorage3" parent="Storage" index="8" groups=["OxygenStorage"] instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 26 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7148, 0, 26 )
 skeleton = NodePath("../../Prod/OxyRecycler")
 damage = true
 
