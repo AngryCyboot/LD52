@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/UI.gd" type="Script" id=1]
 [ext_resource path="res://Images/Elec.png" type="Texture" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://Images/Shit.png" type="Texture" id=4]
 [ext_resource path="res://Images/Water.png" type="Texture" id=5]
 [ext_resource path="res://Images/Food.png" type="Texture" id=6]
-[ext_resource path="res://Images/Turn.png" type="Texture" id=7]
+[ext_resource path="res://Images/Restart_button.png" type="Texture" id=7]
+[ext_resource path="res://Images/Turn_button_v2.svg" type="Texture" id=8]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -21,7 +22,7 @@ margin_top = 148.6
 margin_right = -56.0
 margin_bottom = -17.0
 toggle_mode = true
-icon = ExtResource( 7 )
+icon = ExtResource( 8 )
 icon_align = 1
 expand_icon = true
 
@@ -153,7 +154,6 @@ __meta__ = {
 }
 
 [node name="EndingScreen" type="Polygon2D" parent="."]
-visible = false
 position = Vector2( 0, 47 )
 scale = Vector2( 1, 0.945 )
 color = Color( 0.105882, 0.0705882, 0.0705882, 1 )
@@ -178,15 +178,24 @@ anchor_left = 0.819
 anchor_top = 0.599
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 442.0
-margin_top = 466.0
-margin_right = 565.0
-margin_bottom = 587.0
+margin_left = 471.0
+margin_top = 480.423
+margin_right = 552.0
+margin_bottom = 561.423
 disabled = true
 toggle_mode = true
 icon = ExtResource( 7 )
 icon_align = 1
 expand_icon = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EndingScreen"]
+margin_left = 564.0
+margin_top = 489.947
+margin_right = 636.0
+margin_bottom = 554.947
+text = "Retry
+
+the game ?"
 
 [connection signal="toggled" from="Button" to="." method="_on_Button_toggled"]
 [connection signal="pressed" from="EndingScreen/Restart_button" to="." method="_on_Button_pressed"]
