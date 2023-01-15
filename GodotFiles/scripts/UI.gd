@@ -92,5 +92,7 @@ func help_pressed():
 	print(help_needed)
 	if help_needed:
 		$HelpPanel/HelpPanel_extended.set_visible(true)
+		$HelpPanel/HelpPanel_production.set_visible(true)
 	else:
 		$HelpPanel/HelpPanel_extended.set_visible(false)
+		$HelpPanel/HelpPanel_production.set_visible(false)

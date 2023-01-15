@@ -228,5 +228,39 @@ text = "- Press TAB to switch between farm and buildings
 
 may the force be with you"
 
+[node name="HelpPanel_production" type="Polygon2D" parent="HelpPanel"]
+visible = false
+position = Vector2( 1024, 0 )
+color = Color( 0.254902, 0.239216, 0.239216, 1 )
+polygon = PoolVector2Array( 0, 0, -200, 0, -200, 200, 0, 200 )
+
+[node name="HelpLabel02" type="RichTextLabel" parent="HelpPanel/HelpPanel_production"]
+margin_left = -200.0
+margin_top = 10.0
+margin_bottom = 199.0
+meta_underlined = false
+tab_size = 6
+text = "PRODUCTIONS:
+Oxygen convertissor:
+	+10
+		
+Farms:
+	+ 10
+	
+etc... j'ai la flemme loul
+
+De toute facons il faut faire l'équilibrage avant"
+
+[node name="OxygenIcon" type="Sprite" parent="HelpPanel/HelpPanel_production"]
+position = Vector2( -200, 37 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="FoodIcon" type="Sprite" parent="HelpPanel/HelpPanel_production"]
+position = Vector2( -187, 91 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 6 )
+
 [connection signal="toggled" from="Button" to="." method="_on_Button_toggled"]
 [connection signal="pressed" from="EndingScreen/Restart_button" to="." method="_on_Restart_button_pressed"]
