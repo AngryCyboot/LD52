@@ -38,7 +38,6 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("ui_help"): # if "H" button is pressed
 		emit_signal("help_signal")
-		print("prout")
 
 func update(allTheThings):
 	energy = allTheThings[0]
