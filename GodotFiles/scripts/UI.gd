@@ -5,6 +5,7 @@ var phase
 var turn = 0
 var end = 0
 var survivors = 0
+var help_needed = false
 
 var food = [0,0,0,0]
 var energy = [0,0,0,0]
@@ -13,11 +14,11 @@ var water = [0,0,0,0]
 var shit = [0,0,0,0]
 
 signal restart_signal
+signal help_signal
 
 # Called when the node enters the scene tree for the first time.
-#func _ready():
-#	pass # Replace with function body.
-
+func _ready():
+	$".".connect("help_signal",self,"help_pressed")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -33,9 +34,12 @@ func _process(delta):
 	$FoodLabel.hint_tooltip = "+" + String(food[2]) + " -" + String(food[3])
 	$GoalLabel.text = String(turn)+"/"+String(end)+" sol"
 	$SurvivorLabel.text = "Survivors : "+String(survivors)
+
 	
-	pass
-	
+	if Input.is_action_just_pressed("ui_help"): # if "H" button is pressed
+		emit_signal("help_signal")
+		print("prout")
+
 func update(allTheThings):
 	energy = allTheThings[0]
 	oxy = allTheThings[1]
@@ -79,3 +83,14 @@ func ending_Result():
 
 func _on_Restart_button_pressed():
 	emit_signal("restart_signal")
+	
+func help_pressed():
+	if help_needed == false:
+		help_needed = true
+	elif help_needed == true:
+		help_needed = false
+	print(help_needed)
+	if help_needed:
+		$HelpPanel/HelpPanel_extended.set_visible(true)
+	else:
+		$HelpPanel/HelpPanel_extended.set_visible(false)

@@ -198,5 +198,36 @@ text = "Retry
 
 the game ?"
 
+[node name="HelpPanel" type="Polygon2D" parent="."]
+position = Vector2( 0, 50 )
+color = Color( 0.254902, 0.239216, 0.239216, 1 )
+polygon = PoolVector2Array( 0, 0, 150, 0, 150, 15, 0, 15 )
+
+[node name="HelpLabel01" type="RichTextLabel" parent="HelpPanel"]
+margin_left = 5.0
+margin_right = 155.0
+margin_bottom = 220.0
+meta_underlined = false
+text = "H : for help"
+
+[node name="HelpPanel_extended" type="Polygon2D" parent="HelpPanel"]
+visible = false
+position = Vector2( 0, 15 )
+color = Color( 0.254902, 0.239216, 0.239216, 1 )
+polygon = PoolVector2Array( 0, 0, 150, 0, 150, 200, 0, 200 )
+
+[node name="HelpLabel02" type="RichTextLabel" parent="HelpPanel/HelpPanel_extended"]
+margin_left = 3.0
+margin_top = 10.0
+margin_right = 149.0
+margin_bottom = 199.0
+meta_underlined = false
+text = "- Press TAB to switch between farm and buildings
+
+- You must pick and drag colonist (blue) in building to produce ressources
+
+
+may the force be with you"
+
 [connection signal="toggled" from="Button" to="." method="_on_Button_toggled"]
 [connection signal="pressed" from="EndingScreen/Restart_button" to="." method="_on_Restart_button_pressed"]

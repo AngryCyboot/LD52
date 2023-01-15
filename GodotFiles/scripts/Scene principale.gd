@@ -3,7 +3,7 @@ extends Spatial
 var turn = 0 #change me plz
 export var end = 50
 var survivors = 0 #change me plz
-var UI 
+var UI
 
 # [0stock,1max,2prod,3conso,4frozen*] conso is only for UI
 
@@ -50,7 +50,6 @@ func initialise_list (lista,listb) :
 
 func restart ():
 	get_tree().reload_current_scene()
-	
 
 func kill(nb):
 	if nb < survivors * -1:
