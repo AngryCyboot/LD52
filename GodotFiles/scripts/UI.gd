@@ -6,6 +6,7 @@ var turn = 0
 var end = 0
 var survivors = 0
 var help_needed = false
+var Game_Over = false
 
 var food = [0,0,0,0]
 var energy = [0,0,0,0]
@@ -38,7 +39,6 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("ui_help"): # if "H" button is pressed
 		emit_signal("help_signal")
-		print("prout")
 
 func update(allTheThings):
 	energy = allTheThings[0]
@@ -51,8 +51,9 @@ func update(allTheThings):
 
 func passTurn():
 	$Button.pressed = false
-	$Button.disabled = false
 	ending_Result()
+	if not Game_Over:
+		$Button.disabled = false
 	
 func initialise(doom):
 	end = doom
@@ -73,6 +74,7 @@ func ending_Result():
 		$EndingScreen/ResultLabel.text = "Defeat"
 		$EndingScreen/DetailedResultLabel.text = "You and all the persons you liked are dead. You survived "+String(turn)+" sol"
 		$EndingScreen/Restart_button.disabled = false
+		Game_Over = true
 	elif survivors >= 1 && turn >= end :
 		$EndingScreen.visible = true
 		$EndingScreen/DetailedResultLabel.visible = true
@@ -80,6 +82,7 @@ func ending_Result():
 		$EndingScreen/ResultLabel.text = "Victory"
 		$EndingScreen/DetailedResultLabel.text = "You survive "+String(turn)+" sol and keep alive "+String(survivors)+" survivors"
 		$EndingScreen/Restart_button.disabled = false
+		Game_Over = true
 
 func _on_Restart_button_pressed():
 	emit_signal("restart_signal")
@@ -89,8 +92,9 @@ func help_pressed():
 		help_needed = true
 	elif help_needed == true:
 		help_needed = false
-	print(help_needed)
 	if help_needed:
 		$HelpPanel/HelpPanel_extended.set_visible(true)
+		$HelpPanel/HelpPanel_production.set_visible(true)
 	else:
 		$HelpPanel/HelpPanel_extended.set_visible(false)
+		$HelpPanel/HelpPanel_production.set_visible(false)

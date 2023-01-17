@@ -82,11 +82,12 @@ func endTurn():
 				oxy[2] += data[1]
 				shit[2] += data[2]
 				water[2] += data[3]
-				food[2] += data[4]
+				
 	for x in fields.get_children():
 		var data = x.status()
 		if data[5]:
 			x.grow()
+			food[2] += x.Food
 	
 	energy[1] = 0
 	oxy[1] = 0

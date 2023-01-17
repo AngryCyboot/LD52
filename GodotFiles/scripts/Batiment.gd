@@ -34,9 +34,10 @@ export var stage = 0
 
 func grow():
 	if stage == 5:
-		Food = 5
+		Food = 8
 		stage = 0
 	else:
+		Food = 0
 		stage += 1
 		
 func body_entered(_plop):
