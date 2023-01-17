@@ -232,35 +232,96 @@ may the force be with you"
 visible = false
 position = Vector2( 1024, 0 )
 color = Color( 0.254902, 0.239216, 0.239216, 1 )
-polygon = PoolVector2Array( 0, 0, -200, 0, -200, 200, 0, 200 )
+polygon = PoolVector2Array( 0, 0, -200, 0, -200, 250, 0, 250 )
 
 [node name="HelpLabel02" type="RichTextLabel" parent="HelpPanel/HelpPanel_production"]
 margin_left = -200.0
 margin_top = 10.0
-margin_bottom = 199.0
+margin_bottom = 250.0
 meta_underlined = false
 tab_size = 6
 text = "PRODUCTIONS:
-Oxygen convertissor:
-	+10
-		
-Farms:
-	+ 10
-	
-etc... j'ai la flemme loul
+Oxygen Recyclor:
+	+20	 -10 	 -10
 
-De toute facons il faut faire l'équilibrage avant"
+Water Recyclor:
+	+30	 -10 	 +10
+
+Geothermal Plant:
+	+30	 -10 
+
+Solar Panel:
+	+20
+
+Farms:
+	+ 8 / 5 sol
+"
 
 [node name="OxygenIcon" type="Sprite" parent="HelpPanel/HelpPanel_production"]
-position = Vector2( -200, 37 )
+position = Vector2( -329, 64 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 3 )
 centered = false
+offset = Vector2( 184.286, -38.5714 )
 
 [node name="FoodIcon" type="Sprite" parent="HelpPanel/HelpPanel_production"]
-position = Vector2( -187, 91 )
+position = Vector2( -79, 91 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 4 )
+
+[node name="OxygenIcon2" type="Sprite" parent="HelpPanel/HelpPanel_production"]
+position = Vector2( -272, 66 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( 184.286, -38.5714 )
+
+[node name="OxygenIcon3" type="Sprite" parent="HelpPanel/HelpPanel_production"]
+position = Vector2( -218, 68 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 184.286, -38.5714 )
+
+[node name="OxygenIcon4" type="Sprite" parent="HelpPanel/HelpPanel_production"]
+position = Vector2( -326, 108 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 184.286, -38.5714 )
+
+[node name="FoodIcon2" type="Sprite" parent="HelpPanel/HelpPanel_production"]
+position = Vector2( -187, 228 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 6 )
+
+[node name="OxygenIcon5" type="Sprite" parent="HelpPanel/HelpPanel_production"]
+position = Vector2( -492, -34 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( 497.143, 164.286 )
+
+[node name="OxygenIcon6" type="Sprite" parent="HelpPanel/HelpPanel_production"]
+position = Vector2( -544, 10 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( 497.143, 164.286 )
+
+[node name="OxygenIcon7" type="Sprite" parent="HelpPanel/HelpPanel_production"]
+position = Vector2( -275, 155 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 184.286, -38.5714 )
+
+[node name="OxygenIcon8" type="Sprite" parent="HelpPanel/HelpPanel_production"]
+position = Vector2( -544, 60 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( 497.143, 164.286 )
 
 [connection signal="toggled" from="Button" to="." method="_on_Button_toggled"]
 [connection signal="pressed" from="EndingScreen/Restart_button" to="." method="_on_Restart_button_pressed"]
