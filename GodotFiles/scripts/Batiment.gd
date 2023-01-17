@@ -39,7 +39,6 @@ func grow():
 	else:
 		Food = 0
 		stage += 1
-	print(stage)
 		
 func body_entered(_plop):
 	survivors += 1
