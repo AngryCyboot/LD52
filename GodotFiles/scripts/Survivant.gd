@@ -1,5 +1,13 @@
 extends Spatial
 
+var SpecialityList = ["Engineer", "Biologist", "Chemist", "Survivor"] #Enumeration avec les differentes classes
+var Speciality = SpecialityList[randi() % SpecialityList.size()] # choix random dans SpecialityList
+
+# charge les matériaux selon les spé des colons
+var EngineerMaterial = preload("res://materials et shaders/Engineer.tres")
+var ChemistMaterial = preload("res://materials et shaders/Chemist.tres")
+var BiologistMaterial = preload("res://materials et shaders/Biologist.tres")
+
 var isUpTime = 0
 var time = 0
 var isUp = false
@@ -9,17 +17,9 @@ var Botanist = int()
 var Engineering = int()
 var Chemistry = int()
 
-var Class = "Survivant"
-
-var Class_list = [
-				"Survivant",  # Sans spé
-				"Ingénieur",
-				"Botaniste",
-				"Chimiste"
-				]
 
 func _ready():
-	pass # Replace with function body.
+	getSpeciality()  #Donne les attributs des spé aux colons
 
 func dead():
 	self.visible = false
@@ -47,3 +47,17 @@ func _process(delta):
 		$Survivant_mesh.transform.origin.y = 0.5
 		isUp = false
 	pass
+	
+func getSpeciality():
+	print(Speciality)
+	if Speciality == "Engineer":
+		$Survivant_mesh.set_surface_material(0,EngineerMaterial)
+		print("Im engineer")
+	if Speciality == "Biologist":
+		$Survivant_mesh.set_surface_material(0,BiologistMaterial)
+		print("Im Biologist")
+	if Speciality == "Chemist":
+		$Survivant_mesh.set_surface_material(0,ChemistMaterial)
+		print("Im Chemist")
+	if Speciality == "Survivor":# ce n'est pas très efficace
+		print("Im just a man or wowan")
