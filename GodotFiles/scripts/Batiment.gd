@@ -42,10 +42,12 @@ func grow():
 		
 func body_entered(_plop):
 	survivors += 1
+	print("Hello there", survivors)
 	pass
 
 func body_exited(_plop):
 	survivors -= 1
+	print("Good bye everyone", survivors)
 	pass
 
 func repair():

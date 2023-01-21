@@ -26,3 +26,6 @@ sleeping = true
 
 [node name="CollisionShape" type="CollisionShape" parent="Survivant_mesh/RigidBody"]
 shape = SubResource( 2 )
+
+[connection signal="child_entered_tree" from="." to="." method="_entering_building"]
+[connection signal="child_entered_tree" from="Survivant_mesh/RigidBody/CollisionShape" to="." method="_entering_building"]

@@ -60,3 +60,6 @@ func getSpeciality():
 		$Survivant_mesh.set_surface_material(0,ChemistMaterial)
 	if Speciality == "Survivor":# ce n'est pas très efficace
 		pass
+
+func _entering_building():
+	print("prout")
